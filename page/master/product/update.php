@@ -18,7 +18,7 @@ if (!$product) {
 
 <h2 class="text-2xl font-bold mb-4">Edit Product</h2>
 
-<form action="/halalood/actions/product/update.php" method="POST" enctype="multipart/form-data" class="space-y-4">
+<form action="<?= DB_URL ?>/actions/product/update.php" method="POST" enctype="multipart/form-data" class="space-y-4">
     <input type="hidden" name="id" value="<?= $product['id'] ?>">
 
     <div>

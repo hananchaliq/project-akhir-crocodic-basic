@@ -17,7 +17,7 @@ try {
    } else {
       echo "<script>
                     alert('Transaksi berhasil dihapus!✔️');
-                    window.location.href='../../page/dashboard.php?view=master/laporan/index';
+                    window.location.href='" . DB_URL . "page/dashboard.php?view=master/laporan/index';
             </script>";
       exit;
    }
@@ -28,7 +28,7 @@ try {
    } else {
       echo "<script>
                     alert('Transaksi Gagal dihapus!❌');
-                    window.location.href='../../page/dashboard.php?view=master/laporan/index';
+                    window.location.href='" . DB_URL . "/page/dashboard.php?view=master/laporan/index';
             </script>";
       exit;
    }

@@ -10,7 +10,7 @@ require_once __DIR__ . '/../../../system/database.php';
                 <h1 class="text-3xl font-bold text-black mb-2"><i class="fa-solid fa-user-tie"></i> Daftar Admin</h1>
                 <p class="text-gray-600">Kelola data administrator</p>
             </div>
-            <a href="dashboard.php?view=master/admin/create" 
+            <a href="<?= DB_URL ?>page/dashboard.php?view=master/admin/create" 
                class="mt-4 sm:mt-0 bg-bright-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-dark transition-colors duration-200 shadow-md hover:shadow-lg">
                 <span class="flex items-center">
                     <span class="mr-2"><i class="fa-solid fa-plus"></i></span>
@@ -50,11 +50,11 @@ require_once __DIR__ . '/../../../system/database.php';
                     <td class="py-4 px-6 text-gray-600"><?= htmlspecialchars($row['email']) ?></td>
                     <td class="py-4 px-6 text-center">
                         <div class="flex justify-center space-x-2">
-                            <a href="dashboard.php?view=master/admin/update&id=<?= $row['id'] ?>" 
+                            <a href="<?= DB_URL ?>page/dashboard.php?view=master/admin/update&id=<?= $row['id'] ?>" 
                                class="bg-blue-50 text-blue-600 py-2 px-3 rounded-lg text-sm font-medium hover:bg-blue-100 transition-colors duration-200">
                                 <i class="fa-solid fa-pen"></i> Edit
                             </a>
-                            <a href="/halalood/actions/admin/delete.php?id=<?= $row['id'] ?>" 
+                            <a href="<?= DB_URL ?>actions/admin/delete.php?id=<?= $row['id'] ?>" 
                                class="bg-red-50 text-red-600 py-2 px-3 rounded-lg text-sm font-medium hover:bg-red-100 transition-colors duration-200"
                                onclick="return confirm('Yakin hapus admin?')">
                                 <i class="fa-solid fa-trash"></i> Hapus

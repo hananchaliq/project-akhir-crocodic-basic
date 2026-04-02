@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../../system/database.php';
 
 <h2 class="text-2xl font-bold mb-4"> Tambah Produk</h2>
 
-<form action="halalood/actions/product/create.php" method="POST" enctype="multipart/form-data" class="space-y-4">
+<form action="<?= DB_URL ?>actions/product/create.php" method="POST" enctype="multipart/form-data" class="space-y-4">
     <div>
         <label class="block font-medium">Nama Produk</label>
         <input type="text" name="name" required class="w-full border rounded p-2">

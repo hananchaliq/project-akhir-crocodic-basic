@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("si", $name, $id);
 
     if ($stmt->execute()) {
-        header("Location: ../../page/dashboard.php?view=master/category/index&success=Category berhasil diperbarui");
+        header("Location: " . DB_URL . "page/dashboard.php?view=master/category/index&success=Category berhasil diperbarui");
         exit;
     } else {
         die("Error update category: " . $conn->error);

@@ -11,7 +11,7 @@ if ($id) {
     $res = $check->get_result()->fetch_assoc();
 
     if ($res['cnt'] > 0) {
-        header("Location: ../../page/dashboard.php?view=master/product/index&error=Produk tidak bisa dihapus karena sudah ada di transaksi");
+        header("Location: " . DB_URL . "page/dashboard.php?view=master/product/index&error=Produk tidak bisa dihapus karena sudah ada di transaksi");
         exit;
     }
 
@@ -21,5 +21,5 @@ if ($id) {
     $stmt->execute();
 }
 
-header("Location: ../../page/dashboard.php?view=master/product/index&success=Produk berhasil dihapus");
+header("Location: " . DB_URL . "page/dashboard.php?view=master/product/index&success=Produk berhasil dihapus");
 exit;

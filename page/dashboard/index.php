@@ -43,7 +43,7 @@ $orders = $stmt->fetchAll();
       <!-- Atur kartunya -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
          <!-- Total Transaksi -->
-         <a href="dashboard.php?view=transaksi"
+         <a href="<?= DB_URL ?>page/dashboard.php?view=transaksi"
             class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md hover:border-bright-green transition-all duration-200 cursor-pointer group">
             <div class="flex items-center justify-between">
                <div>
@@ -59,7 +59,7 @@ $orders = $stmt->fetchAll();
          </a>
 
          <!-- Total Customer -->
-         <a href="dashboard.php?view=master/customer/index"
+         <a href="<?= DB_URL ?>page/dashboard.php?view=master/customer/index"
             class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md hover:border-bright-green transition-all duration-200 cursor-pointer group">
             <div class="flex items-center justify-between">
                <div>
@@ -75,7 +75,7 @@ $orders = $stmt->fetchAll();
          </a>
 
          <!-- Total Produk -->
-         <a href="dashboard.php?view=master/product/index"
+         <a href="<?= DB_URL ?>page/dashboard.php?view=master/product/index"
             class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md hover:border-bright-green transition-all duration-200 cursor-pointer group sm:col-span-2 lg:col-span-1">
             <div class="flex items-center justify-between">
                <div>

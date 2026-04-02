@@ -13,7 +13,7 @@ require_once __DIR__ . '/../../../system/database.php';
                     <h2 class="text-xl font-semibold text-white"><i class="fa-solid fa-boxes-packing"></i> Daftar Produk</h2>
                     <p class="text-green-100 text-sm mt-1">Kelola produk dan inventori</p>
                 </div>
-                <a href="dashboard.php?view=master/product/create" 
+                <a href="<?= DB_URL ?>page/dashboard.php?view=master/product/create" 
                    class="bg-white text-bright-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-md hover:shadow-lg flex items-center justify-center">
                     <span class="mr-2"><i class="fa-solid fa-plus"></i></span>
                     <span>Tambah Produk</span>
@@ -70,11 +70,11 @@ require_once __DIR__ . '/../../../system/database.php';
                                 </td>
                                 <td class="py-4 px-4">
                                     <div class="flex space-x-2">
-                                        <a href="dashboard.php?view=master/product/update&id=<?= $row['id'] ?>" 
+                                        <a href="<?= DB_URL ?>page/dashboard.php?view=master/product/update&id=<?= $row['id'] ?>" 
                                            class="bg-blue-50 text-blue-600 py-2 px-3 rounded-lg text-center text-sm font-medium hover:bg-blue-100 transition-colors duration-200">
                                             <i class="fa-solid fa-pen"></i> Edit
                                         </a>
-                                        <a href="halalood/actions/product/delete.php?id=<?= $row['id'] ?>" 
+                                        <a href="<?= DB_URL ?>actions/product/delete.php?id=<?= $row['id'] ?>" 
                                            class="bg-red-50 text-red-600 py-2 px-3 rounded-lg text-center text-sm font-medium hover:bg-red-100 transition-colors duration-200"
                                            onclick="return confirm('Yakin hapus produk ini?')">
                                             <i class="fa-solid fa-trash"></i> Hapus
@@ -93,7 +93,7 @@ require_once __DIR__ . '/../../../system/database.php';
                     <span class="text-6xl mb-4 block">📦</span>
                     <h3 class="text-xl font-semibold text-black mb-2">Belum ada produk</h3>
                     <p class="text-gray-600 mb-6">Mulai dengan menambahkan produk pertama Anda</p>
-                    <a href="dashboard.php?view=master/product/create" 
+                    <a href="<?= DB_URL ?>page/dashboard.php?view=master/product/create" 
                        class="bg-bright-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-dark transition-colors duration-200 shadow-md hover:shadow-lg">
                         Tambah Produk Pertama
                     </a>

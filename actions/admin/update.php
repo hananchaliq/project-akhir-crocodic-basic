@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password']);
 
     if ($name === '' || $email === '') {
-        header("Location: ../../page/dashboard.php?view=master/admin/update&id=$id&error=Nama dan email wajib diisi");
+        header("Location: " . DB_URL . "page/dashboard.php?view=master/admin/update&id=$id&error=Nama dan email wajib diisi");
         exit;
     }
 
@@ -23,12 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($stmt->execute()) {
-        header("Location: ../../page/dashboard.php?view=master/admin/index&success=Admin berhasil diperbarui");
+        header("Location: " . DB_URL . "page/dashboard.php?view=master/admin/index&success=Admin berhasil diperbarui");
         exit;
     } else {
         die("Error update admin: " . $conn->error);
     }
 } else {
-    header("Location: ../../page/dashboard.php?view=master/admin/index");
+    header("Location: " . DB_URL . "page/dashboard.php?view=master/admin/index");
     exit;
 }

@@ -16,7 +16,7 @@
             // Kalau ada transaksi
             echo "<script>
                     alert('Customer tidak bisa dihapus karena sudah memiliki transaksi!');
-                    window.location.href='../../page/dashboard.php?view=master/customer/index';
+                    window.location.href='" . DB_URL . "page/dashboard.php?view=master/customer/index';
                 </script>";
             exit;
         }
@@ -28,20 +28,20 @@
         if ($stmt->execute()) {
             echo "<script>
                     alert('Customer berhasil dihapus!');
-                    window.location.href='../../page/dashboard.php?view=master/customer/index';
+                    window.location.href='" . DB_URL . "page/dashboard.php?view=master/customer/index';
                 </script>";
             exit;
         } else {
             echo "<script>
                     alert('Gagal hapus customer: " . addslashes($conn->error) . "');
-                    window.location.href='../../page/dashboard.php?view=master/customer/index';
+                    window.location.href='" . DB_URL . "page/dashboard.php?view=master/customer/index';
                 </script>";
             exit;
         }
     } else {
         echo "<script>
                 alert('ID tidak ditemukan!');
-                window.location.href='../../page/dashboard.php?view=master/customer/index';
+                window.location.href='" . DB_URL . "page/dashboard.php?view=master/customer/index';
             </script>";
         exit;
     }

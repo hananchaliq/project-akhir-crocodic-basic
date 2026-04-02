@@ -24,7 +24,7 @@ $result = $conn->query("
             <p class="text-green-100 text-sm mt-1">Riwayat dan detail transaksi</p>
          </div>
          <div class="hidden md:flex items-center space-x-4">
-            <a href="/halalood/actions/laporan/delete.php"
+            <a href="<?= DB_URL ?>actions/laporan/delete.php"
                class="bg-red-500 text-bright-white px-6 py-3 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-200 shadow-md hover:shadow-lg flex items-center justify-center">
                <span class="flex items-center">
                   <span class="mr-2"><i class="fa-solid fa-minus"></i></span>
@@ -66,7 +66,7 @@ $result = $conn->query("
                            <?= number_format($row['total_payment'], 0, ',', '.') ?>
                         </td>
                         <td class="py-4 px-6 text-center">
-                           <a href="dashboard.php?view=master/laporan/detail&id=<?= $row['id'] ?>"
+                           <a href="<?= DB_URL ?>page/dashboard.php?view=master/laporan/detail&id=<?= $row['id'] ?>"
                               class="bg-blue-50 text-blue-600 py-2 px-3 rounded-lg text-sm font-medium hover:bg-blue-100 transition-colors duration-200">
                               📋 Detail
                            </a>

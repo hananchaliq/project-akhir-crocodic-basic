@@ -82,7 +82,7 @@ if (isset($_SESSION['admin_id'])) {
          </div>
       <?php endif; ?>
 
-      <form action="/../halalood/actions/login.php" method="POST" class="space-y-6">
+      <form action="<?= DB_URL ?>actions/login.php" method="POST" class="space-y-6">
          <div class="space-y-2">
             <label class="block text-sm font-semibold text-gray-700">Email</label>
             <div class="relative">

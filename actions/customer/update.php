@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("sssi", $name, $phone, $address, $id);
 
     if ($stmt->execute()) {
-        header("Location: ../../page/dashboard.php?view=master/customer/index&success=Customer berhasil diperbarui");
+        header("Location: " . DB_URL . "page/dashboard.php?view=master/customer/index&success=Customer berhasil diperbarui");
         exit;
     } else {
         die("Error update customer: " . $conn->error);

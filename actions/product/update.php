@@ -41,5 +41,5 @@ $stmt = $conn->prepare("UPDATE products SET name=?, category_id=?, price=?, stoc
 $stmt->bind_param("sdiisi", $name, $categoryId, $price, $stock, $imagePath, $id);
 $stmt->execute();
 
-header("Location: ../../page/dashboard.php?view=master/product/index&success=Produk berhasil diupdate");
+header("Location: " . DB_URL . "page/dashboard.php?view=master/product/index&success=Produk berhasil diupdate");
 exit;

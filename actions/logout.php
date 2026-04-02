@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header("Location: ../page/login.php");
+header("Location: " . DB_URL . "page/login.php");
 exit;

@@ -10,7 +10,7 @@ $admin = $stmt->get_result()->fetch_assoc();
 
 <h2 class="text-2xl font-bold mb-4">Edit Admin</h2>
 
-<form action="/halalood/actions/admin/update.php" method="POST" class="space-y-4 max-w-md">
+<form action="<?= DB_URL ?>ctions/admin/update.php" method="POST" class="space-y-4 max-w-md">
     <input type="hidden" name="id" value="<?= $admin['id'] ?>">
     <div>
         <label class="block font-medium">Nama</label>

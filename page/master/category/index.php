@@ -12,7 +12,7 @@ require_once __DIR__ . '/../../../system/database.php';
                <h1 class="text-xl font-semibold text-white"><i class="fa-solid fa-layer-group"></i> Daftar Category</h1>
                <p class="text-green-100 text-sm mt-1">Kelola kategori produk</p>
             </div>
-            <a href="dashboard.php?view=master/category/create" class="bg-white text-bright-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-md hover:shadow-lg flex items-center justify-center">
+            <a href="<?= DB_URL ?>page/dashboard.php?view=master/category/create" class="bg-white text-bright-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-md hover:shadow-lg flex items-center justify-center">
                <span class="flex items-center">
                   <span class="mr-2"><i class="fa-solid fa-plus"></i></span>
                   Tambah Category
@@ -46,11 +46,11 @@ require_once __DIR__ . '/../../../system/database.php';
                            <td class="py-4 px-6 font-medium text-black"><?= htmlspecialchars($row['name']) ?></td>
                            <td class="py-4 px-6 text-center">
                               <div class="flex justify-center space-x-2">
-                                 <a href="dashboard.php?view=master/category/update&id=<?= $row['id'] ?>"
+                                 <a href="<?= DB_URL ?>page/dashboard.php?view=master/category/update&id=<?= $row['id'] ?>"
                                     class="bg-blue-50 text-blue-600 py-2 px-3 rounded-lg text-sm font-medium hover:bg-blue-100 transition-colors duration-200">
                                     <i class="fa-solid fa-pen"></i> Edit
                                  </a>
-                                 <a href="/pj/actions/category/delete.php?id=<?= $row['id'] ?>"
+                                 <a href="<?= DB_URL ?>actions/category/delete.php?id=<?= $row['id'] ?>"
                                     class="bg-red-50 text-red-600 py-2 px-3 rounded-lg text-sm font-medium hover:bg-red-100 transition-colors duration-200"
                                     onclick="return confirm('Yakin hapus category?')">
                                     <i class="fa-solid fa-trash"></i> Hapus

@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../system/database.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
     if ($name === '') {
-        header("Location: ../../page/dashboard.php?view=master/category/create&error=Nama wajib diisi");
+        header("Location: " . DB_URL . "page/dashboard.php?view=master/category/create&error=Nama wajib diisi");
         exit;
     }
 
@@ -12,12 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("s", $name);
 
     if ($stmt->execute()) {
-        header("Location: ../../page/dashboard.php?view=master/category/index&success=Kategori berhasil ditambahkan");
+        header("Location: " . DB_URL . "page/dashboard.php?view=master/category/index&success=Kategori berhasil ditambahkan");
         exit;
     } else {
         die("Error: " . $conn->error);
     }
 } else {
-    header("Location: ../../page/dashboard.php?view=master/category/index");
+    header("Location: " . DB_URL . "page/dashboard.php?view=master/category/index");
     exit;
 }

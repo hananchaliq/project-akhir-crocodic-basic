@@ -15,7 +15,7 @@ if (isset($_GET['id'])) {
     if ($orderCount > 0) {
         echo "<script>
                 alert('Admin tidak bisa dihapus karena sudah memiliki transaksi!');
-                window.location.href='../../page/dashboard.php?view=master/admin/index';
+                window.location.href='" . DB_URL . "page/dashboard.php?view=master/admin/index';
               </script>";
         exit;
     }
@@ -27,17 +27,17 @@ if (isset($_GET['id'])) {
     if ($stmt->execute()) {
         echo "<script>
                 alert('Admin berhasil dihapus!');
-                window.location.href='../../page/dashboard.php?view=master/admin/index';
+                window.location.href='" . DB_URL . "page/dashboard.php?view=master/admin/index';
               </script>";
     } else {
         echo "<script>
                 alert('Gagal hapus admin: " . addslashes($conn->error) . "');
-                window.location.href='../../page/dashboard.php?view=master/admin/index';
+                window.location.href='" . DB_URL . "page/dashboard.php?view=master/admin/index';
               </script>";
     }
 } else {
     echo "<script>
             alert('ID tidak ditemukan!');
-            window.location.href='../../page/dashboard.php?view=master/admin/index';
+            window.location.href='" . DB_URL . "page/dashboard.php?view=master/admin/index';
           </script>";
 }

@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
-        header("Location: ../../page/dashboard.php?view=master/category/index&success=Category berhasil dihapus");
+        header("Location: " . DB_URL . "page/dashboard.php?view=master/category/index&success=Category berhasil dihapus");
         exit;
     } else {
         die("Error hapus category: " . $conn->error);

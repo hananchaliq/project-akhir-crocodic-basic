@@ -16,12 +16,12 @@ foreach ($quantities as $product_id => $qty) {
         $product = $result->fetch_assoc();
 
         if (!$product) {
-            header("Location: ../../page/dashboard.php?view=transaksi&error=Produk tidak ditemukan");
+            header("Location: " . DB_URL . "page/dashboard.php?view=transaksi&error=Produk tidak ditemukan");
             exit;
         }
 
         if ($qty > $product['stock']) {
-            header("Location: ../../page/dashboard.php?view=transaksi&error=Stok produk {$product['name']} tidak mencukupi");
+            header("Location: " . DB_URL . "page/dashboard.php?view=transaksi&error=Stok produk {$product['name']} tidak mencukupi");
             exit;
         }
 
@@ -31,7 +31,7 @@ foreach ($quantities as $product_id => $qty) {
 }
 
 if ($total_product == 0) {
-    header("Location: ../../page/dashboard.php?view=transaksi&error=Tidak ada produk yang dipilih");
+    header("Location: " . DB_URL . "page/dashboard.php?view=transaksi&error=Tidak ada produk yang dipilih");
     exit;
 }
 
@@ -55,5 +55,5 @@ foreach ($quantities as $product_id => $qty) {
     }
 }
 
-header("Location: ../../page/dashboard.php?view=transaksi&success=Transaksi berhasil disimpan&printStruk=" . $order_id);
+header("Location: " . DB_URL . "page/dashboard.php?view=transaksi&success=Transaksi berhasil disimpan&printStruk=" . $order_id);
 exit;

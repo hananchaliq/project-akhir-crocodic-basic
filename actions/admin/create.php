@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password']);
 
     if ($name === '' || $email === '' || $password === '') {
-        header("Location: ../../page/dashboard.php?view=master/admin/create&error=Semua field wajib diisi");
+        header("Location:" . DB_URL . "page/dashboard.php?view=master/admin/create&error=Semua field wajib diisi");
         exit;
     }
 
@@ -17,12 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("sss", $name, $email, $passwordHash);
 
     if ($stmt->execute()) {
-        header("Location: ../../page/dashboard.php?view=master/admin/index&success=Admin berhasil ditambahkan");
+        header("Location: " . DB_URL . "page/dashboard.php?view=master/admin/index&success=Admin berhasil ditambahkan");
         exit;
     } else {
         die("Error simpan admin: " . $conn->error);
     }
 } else {
-    header("Location: ../../page/dashboard.php?view=master/admin/index");
+    header("Location: " . DB_URL . "page/dashboard.php?view=master/admin/index");
     exit;
 }

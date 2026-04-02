@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     if ($stmt->execute()) {
-        header("Location: ../../page/dashboard.php?view=master/customer/index&success=Customer berhasil ditambahkan");
+        header("Location: " . DB_URL . "page/dashboard.php?view=master/customer/index&success=Customer berhasil ditambahkan");
         exit;
     } else {
         die("Error simpan customer: " . $conn->error);

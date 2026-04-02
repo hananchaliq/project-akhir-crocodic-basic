@@ -92,7 +92,7 @@ $details = $conn->query("
 
         <!-- Tombol Aksi -->
         <div class="mt-6 flex space-x-3">
-            <a href="dashboard.php?view=master/laporan/index"
+            <a href="<?= DB_URL ?>page/dashboard.php?view=master/laporan/index"
                class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700">
                ⬅ Kembali ke Laporan
             </a>

@@ -21,19 +21,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['admin_id'] = $row['id'];
             $_SESSION['admin_name'] = $row['name'];
             
-            header("Location: /halalood/page/dashboard.php");
+            header("Location: " . DB_URL . "page/dashboard.php");
             exit;
         } else {
-            header("Location: /halalood/page/login.php?error=Password salah");
+            header("Location:" . DB_URL . "page/login.php?error=Password salah");
             exit;
         }
 
     } else {
         // email ga ketemu
-        header("Location: ../page/login.php?error=Email tidak ditemukan");
+        header("Location: " . DB_URL . "page/login.php?error=Email tidak ditemukan");
         exit;
     }
 } else {
-    header("Location: ../page/login.php");
+    header("Location: " . DB_URL . "page/login.php");
     exit;
 }

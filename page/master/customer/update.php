@@ -10,7 +10,7 @@ $customer = $stmt->get_result()->fetch_assoc();
 
 <h2 class="text-2xl font-bold mb-4">✏️ Edit Customer</h2>
 
-<form action="/halalood/actions/customer/update.php" method="POST" class="space-y-4 max-w-md">
+<form action="<?= DB_URL ?>actions/customer/update.php" method="POST" class="space-y-4 max-w-md">
     <input type="hidden" name="id" value="<?= $customer['id'] ?>">
     <div>
         <label class="block font-medium">Nama</label>

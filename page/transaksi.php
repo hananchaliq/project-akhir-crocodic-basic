@@ -160,7 +160,7 @@ $customers = $conn->query("SELECT * FROM customers ORDER BY id DESC");
                   </div>
 
                   <!-- Scrollable Cart Items + Form -->
-                  <form action="../actions/transaksi/save.php" method="POST" id="cartForm" class="flex-1 flex flex-col">
+                  <form action="<?= DB_URL ?>ctions/transaksi/save.php" method="POST" id="cartForm" class="flex-1 flex flex-col">
                      <input type="hidden" name="customer_id" id="formCustomer">
                      <div id="cartItemsContainer" class="p-6 flex-1 overflow-y-auto">
                         <div class="text-center text-gray-500 py-8">
